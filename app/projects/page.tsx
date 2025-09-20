@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink, Calendar, Moon, Sun } from "lucide-react"
+import { Calendar, Github, ExternalLink, Moon, Sun } from "lucide-react"
 import Link from "next/link"
 
 export default function Projects() {
@@ -15,9 +15,8 @@ export default function Projects() {
       title: "Multi-Agent AI Researcher Agent",
       duration: "Feb 2025 - May 2025",
       techStack: ["Next.js", "Typescript", "React", "Agentic AI", "RAG"],
-      description:
-        "Built a comprehensive multi-agent AI system that automates paper analysis and generates literature reviews by orchestrating 5+ specialized agents, integrating 6+ academic APIs, and implementing RAG with vectorDB and a real-time LLM-powered chat interface for context-aware Q&A.",
-      impact: "Reduced academic research synthesis time by 75% through automated paper analysis and literature review generation",
+      description: "Reduced academic research synthesis time by 75% by building a multi-agent AI system that automates paper analysis, generates literature review by orchestrating 5+ specialized agents, integrating 6+ academic APIs, and implementing RAG with vectorDB and a real-time LLM-powered chat interface for context-aware Q&A.",
+      impact: "75% reduction in research synthesis time, 6+ academic API integrations",
       github: "#",
       demo: "#",
       tags: ["#AgenticAI", "#RAG", "#ResearchAssistant"],
@@ -26,9 +25,8 @@ export default function Projects() {
       title: "Indian LegalGPT",
       duration: "Aug 2024 - Oct 2024",
       techStack: ["React (Vite)", "FastAPI", "Groq", "Python", "ChromaDB", "Mistral-7B"],
-      description:
-        "Created a multilingual legal assistant by fine-tuning Mistral-7B with RAG using ChromaDB for semantic document retrieval, and engineering a low-latency LLM pipeline with FastAPI and Groq, supporting Hindi and English legal queries with accurate domain-specific reasoning.",
-      impact: "Boosted user engagement by 40% through bilingual support and accurate legal domain reasoning",
+      description: "Boosted user engagement by 40% by creating a multilingual legal assistant, fine-tuning Mistral-7B with RAG using ChromaDB for semantic document retrieval, and engineering a low-latency LLM pipeline with FastAPI and Groq, which supports Hindi and English legal queries with accurate domain-specific reasoning.",
+      impact: "40% increase in user engagement, bilingual legal support",
       github: "#",
       demo: "#",
       tags: ["#RAG", "#VectorDB", "#AIchatbot"],
@@ -37,20 +35,18 @@ export default function Projects() {
       title: "DeFi Security Suite",
       duration: "Jun 2024 - Aug 2024",
       techStack: ["Python", "Web3.py", "LLAMA2", "Slither"],
-      description:
-        "Designed a comprehensive DeFi security platform that detects smart contract vulnerabilities and assesses Ethereum transaction risks in real-time across 500+ contracts using GenAI and LLaMA 2, integrating Slither and Web3 monitoring, and generating AI-powered security reports with automated anomaly detection and proactive threat analysis.",
-      impact: "Enhanced DeFi security by detecting vulnerabilities and assessing transaction risks across 500+ smart contracts",
+      description: "Enhanced DeFi security by detecting smart contract vulnerabilities and assessing Ethereum transaction risks in real-time across 500+ contracts by designing a platform that uses GenAI and LLaMA 2, integrates Slither and Web3 monitoring, and generates AI-powered security reports with automated anomaly detection and proactive threat analysis.",
+      impact: "500+ contract analysis, real-time vulnerability detection",
       github: "#",
       demo: "#",
-      tags: ["#Blockchain", "#Security", "#Web3"],
+      tags: ["#Blockchain", "#Security", "#AI"],
     },
     {
       title: "Credit Score Analysis using Machine Learning",
       duration: "Jan 2024 - May 2024",
       techStack: ["Python", "Google Colab", "TensorFlow", "Seaborn"],
-      description:
-        "Built and evaluated 10 stacked ensemble models using Logistic Regression, Decision Trees, and Random Forest, achieving high-precision multi-class credit risk prediction by classifying high and low-risk creditors and addressing class imbalance with CTGAN, SMOTE, and bootstrapping.",
-      impact: "Achieved 98.6% accuracy in multi-class credit risk prediction using stacked ensemble models",
+      description: "Built and evaluated 10 stacked ensemble models using Logistic Regression, Decision Trees, and Random Forest, achieving 98.6% accuracy in multi-class credit risk prediction by classifying high and low-risk creditors and addressing class imbalance with CTGAN, SMOTE, and bootstrapping.",
+      impact: "98.6% accuracy achieved, 10 stacked ensemble models",
       github: "#",
       demo: "#",
       tags: ["#MachineLearning", "#DataScience", "#Analytics"],
@@ -62,7 +58,7 @@ export default function Projects() {
       className={`min-h-screen ${darkMode ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}
     >
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 ${darkMode ? "bg-gray-900" : "bg-white"} border-b`}>
+      <nav className={`${darkMode ? "bg-gray-900" : "bg-white"} border-b flex-shrink-0`}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             <Link href="/about" className="text-xl font-bold text-blue-600">Dheeraaj Pinjala</Link>
@@ -85,9 +81,9 @@ export default function Projects() {
       </nav>
 
       {/* Projects Section */}
-      <section className="pt-32 pb-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-4xl font-bold text-center mb-12">Featured Projects</h1>
           <div className="space-y-8">
             {projects.map((project, index) => (
               <Card key={index}>

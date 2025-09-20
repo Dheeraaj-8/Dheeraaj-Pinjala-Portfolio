@@ -2,19 +2,55 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Moon, Sun } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Trophy, Award, Users, Star, Moon, Sun } from "lucide-react"
 import Link from "next/link"
 
 export default function Achievements() {
   const [darkMode, setDarkMode] = useState(false)
+
+  const achievements = [
+    {
+      title: "2nd Place - CODERA Competition",
+      organization: "College Technical Symposium 'INVENTE'",
+      year: "2022",
+      description: "Secured 2nd place in the coding competition at the college technical symposium, demonstrating strong problem-solving skills and algorithmic thinking.",
+      icon: Trophy,
+      category: "Competition"
+    },
+    {
+      title: "HackWithIndia Semi-Finalist",
+      organization: "Microsoft Sponsored Hackathon",
+      year: "2022",
+      description: "Achieved semi-finalist position (Top 1%) out of 20,000+ teams in the prestigious HackWithIndia hackathon sponsored by Microsoft.",
+      icon: Award,
+      category: "Hackathon"
+    },
+    {
+      title: "Exceptional Mentorship Recognition",
+      organization: "Hewlett Packard Enterprise",
+      year: "2024",
+      description: "Recognized for exceptional mentorship in technical skill development at HPE, achieving 95% satisfaction rate from junior engineer feedback evaluations.",
+      icon: Users,
+      category: "Professional"
+    },
+    {
+      title: "ACE Employee Connect Leadership",
+      organization: "Hewlett Packard Enterprise",
+      year: "2024",
+      description: "Led the planning and execution of quizzes and tech talks for the ACE Employee Connect program at HPE, fostering knowledge sharing and team collaboration.",
+      icon: Star,
+      category: "Leadership"
+    }
+  ]
 
   return (
     <div
       className={`min-h-screen ${darkMode ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}
     >
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 ${darkMode ? "bg-gray-900" : "bg-white"} border-b`}>
+      <nav className={`${darkMode ? "bg-gray-900" : "bg-white"} border-b flex-shrink-0`}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             <Link href="/about" className="text-xl font-bold text-blue-600">Dheeraaj Pinjala</Link>
@@ -37,73 +73,37 @@ export default function Achievements() {
       </nav>
 
       {/* Achievements Section */}
-      <section className="pt-32 pb-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Achievements & Recognition</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card>
-              <CardContent className="pt-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-yellow-100 dark:bg-yellow-900 p-3 rounded-full">
-                    <span className="text-2xl">🏆</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">2nd Place - CODERA Competition</h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      Secured 2nd place in the coding competition 'CODERA' at the college technical symposium 'INVENTE', showcasing problem-solving skills and algorithmic thinking.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="pt-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full">
-                    <span className="text-2xl">🚀</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">HackWithIndia Semi-Finalist</h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      Achieved Semi-Finalist status (Top 1%) out of 20,000+ teams at HackWithIndia, sponsored by Microsoft, demonstrating exceptional innovation and technical prowess.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="pt-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-green-100 dark:bg-green-900 p-3 rounded-full">
-                    <span className="text-2xl">👥</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Exceptional Mentorship Recognition</h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      Recognized for exceptional mentorship in technical skill development at HPE, achieving 95% satisfaction rate from junior engineer feedback evaluations.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="pt-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-100 dark:bg-purple-900 p-3 rounded-full">
-                    <span className="text-2xl">🎯</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">ACE Employee Connect Leadership</h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      Led the planning and execution of quizzes and tech talks for the ACE Employee Connect program at HPE, fostering knowledge sharing and team collaboration.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-4xl font-bold text-center mb-12">Achievements & Recognition</h1>
+          <div className="grid md:grid-cols-2 gap-8">
+            {achievements.map((achievement, index) => {
+              const IconComponent = achievement.icon
+              return (
+                <Card key={index} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-center">
+                        <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-full mr-4">
+                          <IconComponent className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-lg">{achievement.title}</CardTitle>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{achievement.organization}</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <Badge variant="outline" className="mb-2">{achievement.year}</Badge>
+                        <Badge variant="secondary" className="text-xs">{achievement.category}</Badge>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 dark:text-gray-300">{achievement.description}</p>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>
