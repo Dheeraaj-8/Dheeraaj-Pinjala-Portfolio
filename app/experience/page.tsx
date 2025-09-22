@@ -1,14 +1,14 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Briefcase, Download, Moon, Sun } from "lucide-react"
 import Link from "next/link"
+import { useTheme } from "../../contexts/theme-context"
 
 export default function Experience() {
-  const [darkMode, setDarkMode] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   const experience = [
     {
@@ -34,23 +34,23 @@ export default function Experience() {
       ],
     },
     {
-      title: "Software Development Core Member",
+      title: "AI/ML Core Member",
       company: "SSN Coding Club",
       location: "Chennai, India",
       duration: "Jun 2022 - Feb 2023",
       achievements: [
-        "Mentored 50+ students on Software Engineering principles and MERN stack fundamentals, guiding them in system design concepts, coding best practices, and providing hands-on experience with industry-relevant tools and frameworks.",
-        "Led brainstorming sessions and organized 10+ SDE workshops and hackathons, increasing student participation by 150% and contributing to 5+ coding competition wins."
+        "Mentored 50+ students on machine learning fundamentals, guiding them in data science techniques and providing hands-on experience with relevant frameworks and libraries.",
+        "Led brainstorming sessions and organized 10+ AI/ML workshops and hackathons, increasing student participation by 150% and contributing to 5+ coding competition wins."
       ],
     },
   ]
 
   return (
     <div
-      className={`min-h-screen ${darkMode ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}
+      className={`min-h-screen ${theme === "dark" ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}
     >
       {/* Navigation */}
-      <nav className={`${darkMode ? "bg-gray-900" : "bg-white"} border-b flex-shrink-0`}>
+      <nav className={`${theme === "dark" ? "bg-gray-900" : "bg-white"} border-b flex-shrink-0`}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             <Link href="/about" className="text-xl font-bold text-blue-600">Dheeraaj Pinjala</Link>
@@ -59,14 +59,14 @@ export default function Experience() {
                 <Link
                   key={item}
                   href={item.toLowerCase()}
-                  className="hover:text-blue-600 transition-colors"
+                  className={`hover:text-blue-600 transition-colors ${item === "Experience" ? "text-blue-600" : ""}`}
                 >
                   {item}
                 </Link>
               ))}
             </div>
-            <Button variant="ghost" size="icon" onClick={() => setDarkMode(!darkMode)}>
-              {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           </div>
         </div>

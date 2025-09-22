@@ -1,22 +1,22 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Github, Linkedin, Send, Moon, Sun } from "lucide-react"
 import Link from "next/link"
+import { useTheme } from "../../contexts/theme-context"
 
 export default function Contact() {
-  const [darkMode, setDarkMode] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <div
-      className={`min-h-screen ${darkMode ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}
+      className={`min-h-screen flex flex-col ${theme === "dark" ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}
     >
       {/* Navigation */}
-      <nav className={`${darkMode ? "bg-gray-900" : "bg-white"} border-b flex-shrink-0`}>
+      <nav className={`${theme === "dark" ? "bg-gray-900" : "bg-white"} border-b flex-shrink-0`}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             <Link href="/about" className="text-xl font-bold text-blue-600">Dheeraaj Pinjala</Link>
@@ -25,32 +25,32 @@ export default function Contact() {
                 <Link
                   key={item}
                   href={item.toLowerCase()}
-                  className="hover:text-blue-600 transition-colors"
+                  className={`hover:text-blue-600 transition-colors ${item === "Contact" ? "text-blue-600" : ""}`}
                 >
                   {item}
                 </Link>
               ))}
             </div>
-            <Button variant="ghost" size="icon" onClick={() => setDarkMode(!darkMode)}>
-              {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           </div>
         </div>
       </nav>
 
       {/* Contact Section */}
-      <section className="py-16 px-4">
+      <section className="py-12 px-4 flex-1 min-h-[calc(100vh-40px)]">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12">Let's Connect</h1>
-          <div className="grid md:grid-cols-2 gap-12">
+          <h1 className="text-4xl font-bold text-center mb-8">Let's Connect</h1>
+          <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">
                 I'm always interested in discussing new opportunities, innovative projects, or just having a
                 conversation about technology. Feel free to reach out!
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="h-6 w-6 text-blue-600 mr-4" />
                   <div>
