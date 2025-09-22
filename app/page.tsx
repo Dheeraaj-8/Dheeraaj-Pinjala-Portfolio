@@ -77,12 +77,12 @@ export default function Portfolio() {
 
               {/* Call to Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-4">
-                <Link href="/projects">
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                   <button className="group relative px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold text-base rounded-xl shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300">
-                    <span className="relative z-10">View My Projects</span>
+                    <span className="relative z-10">My Resume</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
-                </Link>
+                </a>
                 <Link href="/contact">
                   <button className="group px-6 py-3 border-2 border-blue-600 text-blue-600 font-bold text-base rounded-xl hover:bg-blue-600 hover:text-white transform hover:-translate-y-1 transition-all duration-300">
                     Let's Connect
