@@ -3,12 +3,13 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Briefcase, Download, Moon, Sun } from "lucide-react"
+import { Briefcase, Download } from "lucide-react"
 import Link from "next/link"
 import { useTheme } from "../../contexts/theme-context"
+import Navigation from "../../components/navigation"
 
 export default function Experience() {
-  const { theme, toggleTheme } = useTheme()
+  const { theme } = useTheme()
 
   const experience = [
     {
@@ -50,54 +51,34 @@ export default function Experience() {
       className={`min-h-screen ${theme === "dark" ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}
     >
       {/* Navigation */}
-      <nav className={`${theme === "dark" ? "bg-gray-900" : "bg-white"} border-b flex-shrink-0`}>
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <Link href="/about" className="text-xl font-bold text-blue-600">Dheeraaj Pinjala</Link>
-            <div className="hidden md:flex space-x-6">
-              {["About", "Skills", "Projects", "Experience", "Achievements", "Contact"].map((item) => (
-                <Link
-                  key={item}
-                  href={item.toLowerCase()}
-                  className={`hover:text-blue-600 transition-colors ${item === "Experience" ? "text-blue-600" : ""}`}
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation currentPage="Experience" />
 
       {/* Experience Section */}
-      <section className="py-16 px-4">
+      <section className="py-12 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12">Professional Experience</h1>
-          <div className="space-y-8">
+          <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">Professional Experience</h1>
+          <div className="space-y-6 sm:space-y-8">
             {experience.map((exp, index) => (
               <Card key={index}>
                 <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <CardTitle className="flex items-center text-lg">
-                        <Briefcase className="h-5 w-5 mr-2 text-blue-600" />
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between space-y-2 sm:space-y-0">
+                    <div className="flex-1">
+                      <CardTitle className="flex items-center text-base sm:text-lg">
+                        <Briefcase className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-blue-600" />
                         {exp.title}
                       </CardTitle>
-                      <p className="text-lg font-medium mt-1 text-gray-600 dark:text-gray-300">{exp.company}</p>
-                      <p className="text-sm text-gray-500 mt-1">{exp.location}</p>
+                      <p className="text-base sm:text-lg font-medium mt-1 text-gray-600 dark:text-gray-300">{exp.company}</p>
+                      <p className="text-xs sm:text-sm text-gray-500 mt-1">{exp.location}</p>
                     </div>
-                    <Badge variant="outline">{exp.duration}</Badge>
+                    <Badge variant="outline" className="text-xs sm:text-sm">{exp.duration}</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 sm:space-y-3">
                     {exp.achievements.map((achievement, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-blue-600 mr-2 mt-1">•</span>
-                        <span className="text-gray-600 dark:text-gray-300">{achievement}</span>
+                        <span className="text-blue-600 mr-2 mt-1 text-sm">•</span>
+                        <span className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-justify">{achievement}</span>
                       </li>
                     ))}
                   </ul>
@@ -105,8 +86,8 @@ export default function Experience() {
               </Card>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Button variant="outline" size="lg">
+          <div className="text-center mt-6 sm:mt-8">
+            <Button variant="outline" size="lg" className="text-sm sm:text-base">
               <Download className="h-4 w-4 mr-2" />
               Download Resume
             </Button>
@@ -115,12 +96,12 @@ export default function Experience() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <p className="text-2xl text-gray-800 dark:text-gray-200 tracking-wide">
+      <footer className="py-8 sm:py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <p className="text-lg sm:text-2xl text-gray-800 dark:text-gray-200 tracking-wide text-center sm:text-left">
             By Dheeraaj Pinjala
           </p>
-          <Link href="/contact" className="text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide">
+          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide text-center sm:text-right">
             Connect with me
           </Link>
         </div>

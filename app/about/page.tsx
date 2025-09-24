@@ -3,42 +3,22 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Moon, Sun } from "lucide-react"
 import Link from "next/link"
 import { useTheme } from "../../contexts/theme-context"
+import Navigation from "../../components/navigation"
 
 export default function About() {
-  const { theme, toggleTheme } = useTheme()
+  const { theme } = useTheme()
 
   return (
     <div
       className={`min-h-screen ${theme === "dark" ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}
     >
       {/* Navigation */}
-      <nav className={`${theme === "dark" ? "bg-gray-900" : "bg-white"} border-b flex-shrink-0`}>
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <Link href="/about" className="text-xl font-bold text-blue-600">Dheeraaj Pinjala</Link>
-            <div className="hidden md:flex space-x-6">
-              {["About", "Skills", "Projects", "Experience", "Achievements", "Contact"].map((item) => (
-                <Link
-                  key={item}
-                  href={item.toLowerCase()}
-                  className={`hover:text-blue-600 transition-colors ${item === "About" ? "text-blue-600" : ""}`}
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation currentPage="About" />
 
-      {/* Hero Section - Full Viewport */}
-      <section className="h-screen flex justify-center px-4 relative pt-24">
+      {/* Hero Section - Responsive */}
+      <section className="min-h-screen flex items-center justify-center px-4 py-8 sm:py-12 lg:py-16 relative">
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900"></div>
         
@@ -49,10 +29,10 @@ export default function About() {
           <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-cyan-500 rounded-full blur-2xl"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            {/* Left side - 70% (8 columns) */}
-            <div className="lg:col-span-8 text-center lg:text-left space-y-4">
+        <div className="max-w-7xl mx-auto relative z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left side - Content */}
+            <div className="lg:col-span-8 text-center lg:text-left space-y-4 sm:space-y-6 order-last lg:order-first">
               {/* Name - Much Larger */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-2 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 bg-clip-text text-transparent leading-tight">
                 DHEERAAJ<br />PINJALA
@@ -110,15 +90,18 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right side - 30% (4 columns) */}
-            <div className="lg:col-span-4 flex justify-center">
+            {/* Right side - Profile Image */}
+            <div className="lg:col-span-4 flex justify-center order-first lg:order-last">
               <div className="relative">
                 {/* Enhanced Photo Container */}
-                <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-3xl overflow-hidden shadow-2xl hover:shadow-blue-600/50 dark:hover:shadow-blue-400/60 hover:shadow-4xl hover:scale-105 transition-all duration-500 group relative">
+                  {/* Glow ring */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-600/30 via-blue-600/30 to-blue-600/30 dark:from-gray-700/30 via-gray-700/30 dark:to-blue-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+                  
                   <img 
                     src="/profile-photo.jpeg" 
                     alt="Dheeraaj Pinjala" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover relative z-10"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
@@ -126,14 +109,11 @@ export default function About() {
                       if (nextElement) nextElement.style.display = 'flex';
                     }}
                   />
-                  <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-blue-900 flex items-center justify-center" style={{display: 'none'}}>
+                  <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-blue-900 flex items-center justify-center relative z-10" style={{display: 'none'}}>
                     <span className="text-6xl font-black text-blue-600 dark:text-blue-400">DP</span>
                   </div>
                 </div>
                 
-                {/* Decorative Elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20 animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-30 animate-pulse delay-1000"></div>
               </div>
             </div>
           </div>
@@ -141,25 +121,25 @@ export default function About() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-800">
+      <section className="py-12 sm:py-16 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">About Me</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">About Me</h2>
           <div className="max-w-3xl mx-auto">
-            <p className="text-base text-gray-600 dark:text-gray-300 mb-6 text-justify">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-justify">
               Hello! I'm Dheeraaj, currently pursuing my Master of Science in Computer Science at Northeastern University in Boston, Massachusetts. 
               My journey in tech began with a Bachelor's in Information Technology from SSN College of Engineering, where I discovered my passion for 
               solving real-world problems and creating meaningful impact through technology.
             </p>
-            <p className="text-base text-gray-600 dark:text-gray-300 mb-6 text-justify">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-justify">
               As a former Software Engineer at Hewlett Packard Enterprise, I spent 2 years building enterprise-scale solutions and honing my skills in 
               cloud infrastructure, DevOps practices, and collaborative leadership. This experience taught me the importance of building systems that 
               not only work well but also serve real human needs.
             </p>
-            <p className="text-base text-gray-600 dark:text-gray-300 mb-6 text-justify">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-justify">
               What truly drives me is the ethical application of AI to solve complex problems. I believe technology should enhance human capabilities 
               while maintaining transparency and fairness. This philosophy guides my approach to building solutions that make a meaningful difference.
             </p>
-            <p className="text-base text-gray-600 dark:text-gray-300 text-justify">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-justify">
               When I'm not immersed in code or AI research, you'll find me mentoring fellow developers, exploring Boston's vibrant tech scene, 
               or diving into the latest research papers on responsible AI development. I'm always excited to connect with like-minded individuals 
               who share a vision of technology that makes the world a better place.
@@ -169,12 +149,12 @@ export default function About() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <p className="text-2xl text-gray-800 dark:text-gray-200 tracking-wide">
+      <footer className="py-8 sm:py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <p className="text-lg sm:text-2xl text-gray-800 dark:text-gray-200 tracking-wide text-center sm:text-left">
             By Dheeraaj Pinjala
           </p>
-          <Link href="/contact" className="text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide">
+          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide text-center sm:text-right">
             Connect with me
           </Link>
         </div>

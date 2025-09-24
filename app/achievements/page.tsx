@@ -3,12 +3,13 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Trophy, Award, Users, Star, Moon, Sun } from "lucide-react"
+import { Trophy, Award, Users, Star } from "lucide-react"
 import Link from "next/link"
 import { useTheme } from "../../contexts/theme-context"
+import Navigation from "../../components/navigation"
 
 export default function Achievements() {
-  const { theme, toggleTheme } = useTheme()
+  const { theme } = useTheme()
 
   const achievements = [
     {
@@ -50,56 +51,36 @@ export default function Achievements() {
       className={`min-h-screen ${theme === "dark" ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}
     >
       {/* Navigation */}
-      <nav className={`${theme === "dark" ? "bg-gray-900" : "bg-white"} border-b flex-shrink-0`}>
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <Link href="/about" className="text-xl font-bold text-blue-600">Dheeraaj Pinjala</Link>
-            <div className="hidden md:flex space-x-6">
-              {["About", "Skills", "Projects", "Experience", "Achievements", "Contact"].map((item) => (
-                <Link
-                  key={item}
-                  href={item.toLowerCase()}
-                  className={`hover:text-blue-600 transition-colors ${item === "Achievements" ? "text-blue-600" : ""}`}
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation currentPage="Achievements" />
 
       {/* Achievements Section */}
-      <section className="py-16 px-4">
+      <section className="py-12 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12">Achievements & Recognition</h1>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">Achievements & Recognition</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {achievements.map((achievement, index) => {
               const IconComponent = achievement.icon
               return (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="flex items-center">
-                        <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-full mr-4">
-                          <IconComponent className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between space-y-3 sm:space-y-0">
+                      <div className="flex items-start space-x-3 sm:space-x-4">
+                        <div className="p-2 sm:p-3 bg-blue-100 dark:bg-blue-900 rounded-full flex-shrink-0">
+                          <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 dark:text-blue-400" />
                         </div>
-                        <div>
-                          <CardTitle className="text-lg">{achievement.title}</CardTitle>
-                          <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{achievement.organization}</p>
+                        <div className="flex-1">
+                          <CardTitle className="text-base sm:text-lg">{achievement.title}</CardTitle>
+                          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-1">{achievement.organization}</p>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <Badge variant="outline" className="mb-2">{achievement.year}</Badge>
+                      <div className="flex flex-col sm:items-end space-y-1 sm:space-y-2">
+                        <Badge variant="outline" className="text-xs sm:text-sm">{achievement.year}</Badge>
                         <Badge variant="secondary" className="text-xs">{achievement.category}</Badge>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 dark:text-gray-300">{achievement.description}</p>
+                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{achievement.description}</p>
                   </CardContent>
                 </Card>
               )
@@ -109,12 +90,12 @@ export default function Achievements() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <p className="text-2xl text-gray-800 dark:text-gray-200 tracking-wide">
+      <footer className="py-8 sm:py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <p className="text-lg sm:text-2xl text-gray-800 dark:text-gray-200 tracking-wide text-center sm:text-left">
             By Dheeraaj Pinjala
           </p>
-          <Link href="/contact" className="text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide">
+          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide text-center sm:text-right">
             Connect with me
           </Link>
         </div>

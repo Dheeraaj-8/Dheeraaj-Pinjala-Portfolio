@@ -3,12 +3,13 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Github, ExternalLink, Moon, Sun } from "lucide-react"
+import { Calendar, Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { useTheme } from "../../contexts/theme-context"
+import Navigation from "../../components/navigation"
 
 export default function Projects() {
-  const { theme, toggleTheme } = useTheme()
+  const { theme } = useTheme()
 
   const projects = [
     {
@@ -58,64 +59,44 @@ export default function Projects() {
       className={`min-h-screen ${theme === "dark" ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}`}
     >
       {/* Navigation */}
-      <nav className={`${theme === "dark" ? "bg-gray-900" : "bg-white"} border-b flex-shrink-0`}>
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <Link href="/about" className="text-xl font-bold text-blue-600">Dheeraaj Pinjala</Link>
-            <div className="hidden md:flex space-x-6">
-              {["About", "Skills", "Projects", "Experience", "Achievements", "Contact"].map((item) => (
-                <Link
-                  key={item}
-                  href={item.toLowerCase()}
-                  className={`hover:text-blue-600 transition-colors ${item === "Projects" ? "text-blue-600" : ""}`}
-                >
-                  {item}
-                </Link>
-              ))}
-            </div>
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation currentPage="Projects" />
 
       {/* Projects Section */}
-      <section className="py-16 px-4">
+      <section className="py-12 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12">Featured Projects</h1>
-          <div className="space-y-8">
+          <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">Featured Projects</h1>
+          <div className="space-y-6 sm:space-y-8">
             {projects.map((project, index) => (
               <Card key={index}>
                 <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl">{project.title}</CardTitle>
-                      <div className="flex items-center text-sm text-gray-500 mt-1">
-                        <Calendar className="h-4 w-4 mr-1" />
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start space-y-2 sm:space-y-0">
+                    <div className="flex-1">
+                      <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>
+                      <div className="flex items-center text-xs sm:text-sm text-gray-500 mt-1">
+                        <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
                         {project.duration}
                       </div>
                     </div>
                     <div className="flex space-x-2">
                       <a href={project.github} className="text-gray-500 hover:text-blue-600">
-                        <Github className="h-5 w-5" />
+                        <Github className="h-4 w-4 sm:h-5 sm:w-5" />
                       </a>
                       <a href={project.demo} className="text-gray-500 hover:text-blue-600">
-                        <ExternalLink className="h-5 w-5" />
+                        <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
                       </a>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 text-justify">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
                     {project.techStack.map((tech) => (
-                      <Badge key={tech} variant="secondary">
+                      <Badge key={tech} variant="secondary" className="text-xs sm:text-sm">
                         {tech}
                       </Badge>
                     ))}
                   </div>
-                  <p className="text-sm text-green-600 dark:text-green-400 font-medium">
+                  <p className="text-xs sm:text-sm text-green-600 dark:text-green-400 font-medium">
                     Impact: {project.impact}
                   </p>
                 </CardContent>
@@ -126,12 +107,12 @@ export default function Projects() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <p className="text-2xl text-gray-800 dark:text-gray-200 tracking-wide">
+      <footer className="py-8 sm:py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <p className="text-lg sm:text-2xl text-gray-800 dark:text-gray-200 tracking-wide text-center sm:text-left">
             By Dheeraaj Pinjala
           </p>
-          <Link href="/contact" className="text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide">
+          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide text-center sm:text-right">
             Connect with me
           </Link>
         </div>
