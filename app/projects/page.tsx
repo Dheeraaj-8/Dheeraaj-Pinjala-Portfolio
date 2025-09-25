@@ -62,12 +62,12 @@ export default function Projects() {
       <Navigation currentPage="Projects" />
 
       {/* Projects Section */}
-      <section className="py-12 sm:py-16 px-4">
+      <section className="py-12 sm:py-16 px-4 bg-white dark:bg-gray-900 dark:bg-gradient-to-br dark:from-gray-900 dark:to-slate-900">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">Featured Projects</h1>
           <div className="space-y-6 sm:space-y-8">
             {projects.map((project, index) => (
-              <Card key={index}>
+              <Card key={index} className="border-gray-200 dark:border-purple-800/30">
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start space-y-2 sm:space-y-0">
                     <div className="flex-1">
@@ -78,10 +78,10 @@ export default function Projects() {
                       </div>
                     </div>
                     <div className="flex space-x-2">
-                      <a href={project.github} className="text-gray-500 hover:text-blue-600">
+                      <a href={project.github} className="text-gray-500 hover:text-blue-600 dark:hover:text-purple-400">
                         <Github className="h-4 w-4 sm:h-5 sm:w-5" />
                       </a>
-                      <a href={project.demo} className="text-gray-500 hover:text-blue-600">
+                      <a href={project.demo} className="text-gray-500 hover:text-blue-600 dark:hover:text-purple-400">
                         <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
                       </a>
                     </div>
@@ -107,12 +107,12 @@ export default function Projects() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 sm:py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
+      <footer className="py-8 sm:py-12 px-4 border-t border-gray-200 dark:border-purple-800/30 bg-gray-50 dark:bg-gray-900 dark:bg-gradient-to-br dark:from-gray-900 dark:to-slate-900">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <p className="text-lg sm:text-2xl text-gray-800 dark:text-gray-200 tracking-wide text-center sm:text-left">
             By Dheeraaj Pinjala
           </p>
-          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide text-center sm:text-right">
+          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 dark:text-purple-400 dark:hover:text-purple-300 transition-colors tracking-wide text-center sm:text-right">
             Connect with me
           </Link>
         </div>

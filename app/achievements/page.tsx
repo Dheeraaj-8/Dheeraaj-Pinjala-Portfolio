@@ -54,19 +54,19 @@ export default function Achievements() {
       <Navigation currentPage="Achievements" />
 
       {/* Achievements Section */}
-      <section className="py-12 sm:py-16 px-4">
+      <section className="py-12 sm:py-16 px-4 bg-white dark:bg-gray-900 dark:bg-gradient-to-br dark:from-gray-900 dark:to-slate-900">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">Achievements & Recognition</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {achievements.map((achievement, index) => {
               const IconComponent = achievement.icon
               return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card key={index} className="hover:shadow-lg transition-shadow border-gray-200 dark:border-purple-800/30">
                   <CardHeader>
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between space-y-3 sm:space-y-0">
                       <div className="flex items-start space-x-3 sm:space-x-4">
-                        <div className="p-2 sm:p-3 bg-blue-100 dark:bg-blue-900 rounded-full flex-shrink-0">
-                          <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 dark:text-blue-400" />
+                        <div className="p-2 sm:p-3 bg-blue-100 dark:bg-purple-900/30 rounded-full flex-shrink-0">
+                          <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 dark:text-purple-400" />
                         </div>
                         <div className="flex-1">
                           <CardTitle className="text-base sm:text-lg">{achievement.title}</CardTitle>
@@ -90,12 +90,12 @@ export default function Achievements() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 sm:py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
+      <footer className="py-8 sm:py-12 px-4 border-t border-gray-200 dark:border-purple-800/30 bg-gray-50 dark:bg-gray-900 dark:bg-gradient-to-br dark:from-gray-900 dark:to-slate-900">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <p className="text-lg sm:text-2xl text-gray-800 dark:text-gray-200 tracking-wide text-center sm:text-left">
             By Dheeraaj Pinjala
           </p>
-          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide text-center sm:text-right">
+          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 dark:text-purple-400 dark:hover:text-purple-300 transition-colors tracking-wide text-center sm:text-right">
             Connect with me
           </Link>
         </div>

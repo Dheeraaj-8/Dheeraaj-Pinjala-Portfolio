@@ -33,7 +33,7 @@ export default function Skills() {
       <Navigation currentPage="Skills" />
 
       {/* Skills Section */}
-      <section className="py-12 sm:py-16 px-4">
+      <section className="py-12 sm:py-16 px-4 bg-white dark:bg-gray-900 dark:bg-gradient-to-br dark:from-gray-900 dark:to-slate-900">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">Skills & Expertise</h1>
           
@@ -42,8 +42,8 @@ export default function Skills() {
             <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Technical Skills</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               {Object.entries(technicalSkills).map(([category, skills]) => (
-                <div key={category} className="bg-gray-50 dark:bg-gray-800 p-4 sm:p-6 rounded-xl">
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-blue-600">{category}</h3>
+                <div key={category} className="bg-gray-50 dark:bg-gray-800 p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-purple-800/30">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-blue-600 dark:text-purple-400">{category}</h3>
                   <div className="flex flex-wrap gap-2">
                     {skills.map((skill) => (
                       <Badge key={skill} variant="secondary" className="text-xs sm:text-sm">
@@ -73,12 +73,12 @@ export default function Skills() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 sm:py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
+      <footer className="py-8 sm:py-12 px-4 border-t border-gray-200 dark:border-purple-800/30 bg-gray-50 dark:bg-gray-900 dark:bg-gradient-to-br dark:from-gray-900 dark:to-slate-900">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <p className="text-lg sm:text-2xl text-gray-800 dark:text-gray-200 tracking-wide text-center sm:text-left">
             By Dheeraaj Pinjala
           </p>
-          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide text-center sm:text-right">
+          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 dark:text-purple-400 dark:hover:text-purple-300 transition-colors tracking-wide text-center sm:text-right">
             Connect with me
           </Link>
         </div>

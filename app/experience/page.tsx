@@ -54,17 +54,17 @@ export default function Experience() {
       <Navigation currentPage="Experience" />
 
       {/* Experience Section */}
-      <section className="py-12 sm:py-16 px-4">
+      <section className="py-12 sm:py-16 px-4 bg-white dark:bg-gray-900 dark:bg-gradient-to-br dark:from-gray-900 dark:to-slate-900">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">Professional Experience</h1>
           <div className="space-y-6 sm:space-y-8">
             {experience.map((exp, index) => (
-              <Card key={index}>
+              <Card key={index} className="border-gray-200 dark:border-purple-800/30">
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between space-y-2 sm:space-y-0">
                     <div className="flex-1">
                       <CardTitle className="flex items-center text-base sm:text-lg">
-                        <Briefcase className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-blue-600" />
+                        <Briefcase className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-blue-600 dark:text-purple-400" />
                         {exp.title}
                       </CardTitle>
                       <p className="text-base sm:text-lg font-medium mt-1 text-gray-600 dark:text-gray-300">{exp.company}</p>
@@ -77,7 +77,7 @@ export default function Experience() {
                   <ul className="space-y-2 sm:space-y-3">
                     {exp.achievements.map((achievement, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-blue-600 mr-2 mt-1 text-sm">•</span>
+                        <span className="text-blue-600 dark:text-purple-400 mr-2 mt-1 text-sm">•</span>
                         <span className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-justify">{achievement}</span>
                       </li>
                     ))}
@@ -96,12 +96,12 @@ export default function Experience() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 sm:py-12 px-4 border-t bg-gray-50 dark:bg-gray-800">
+      <footer className="py-8 sm:py-12 px-4 border-t border-gray-200 dark:border-purple-800/30 bg-gray-50 dark:bg-gray-900 dark:bg-gradient-to-br dark:from-gray-900 dark:to-slate-900">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <p className="text-lg sm:text-2xl text-gray-800 dark:text-gray-200 tracking-wide text-center sm:text-left">
             By Dheeraaj Pinjala
           </p>
-          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 transition-colors tracking-wide text-center sm:text-right">
+          <Link href="/contact" className="text-lg sm:text-2xl text-blue-600 hover:text-blue-700 dark:text-purple-400 dark:hover:text-purple-300 transition-colors tracking-wide text-center sm:text-right">
             Connect with me
           </Link>
         </div>
