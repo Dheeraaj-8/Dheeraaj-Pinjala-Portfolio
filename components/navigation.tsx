@@ -17,7 +17,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
   const navigationItems = ["About", "Skills", "Projects", "Experience", "Achievements", "Contact"]
 
   return (
-    <nav className={`${theme === "dark" ? "bg-gray-900 bg-gradient-to-br from-gray-900 to-slate-900 border-purple-800/30" : "bg-white"} border-b flex-shrink-0`}>
+    <nav className={`${theme === "dark" ? "bg-card border-purple-800/30" : "bg-white"} border-b flex-shrink-0`}>
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link href="/about" className="text-xl font-bold text-blue-600 dark:text-purple-400">
