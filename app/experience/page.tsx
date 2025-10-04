@@ -18,10 +18,11 @@ export default function Experience() {
       location: "Bengaluru, India",
       duration: "Sep 2023 - Aug 2025",
       achievements: [
-        "Improved observability by 40% by developing and enhancing the NOC Dashboard in HPE Aruba Networking Central using React, FastAPI, and Prometheus, enabling a dynamic centralized view of network health, usage and events.",
-        "Deployed backend microservices as containers on OpenStack-provisioned VMs using Docker and Kubernetes, leveraging auto-scaling to ensure consistent delivery of new features across production environments.",
-        "Eliminated $300K in annual resource waste by optimizing resource allocation across production environments using Python-based predictive analytics and time-series forecasting on network telemetry.",
-        "Collaborated with cross-functional teams to integrate AI/ML models on telemetry data lakes as microservices, generating proactive alerts and recommendations for network health, device performance, and end-user experience."
+        "Led development of the centralized network dashboard (React/FastAPI), collaborating with Product and NOC teams to translate operational requirements into features that cut average incident resolution time by 20 minutes.",
+        "Deployed containerized backend services (Docker/Kubernetes) on OpenStack VMs, using auto-scaling to maintain feature stability across production environments.",
+        "Eliminated $300K in annual resource waste by optimizing resource allocation in production using Python and time-series forecasting.",
+        "Developed scalable APIs and React Components to integrate AI/ML models as microservices onto network data infrastructure, generating alerts and recommendations for network health, device performance, and user experience.",
+        "Established comprehensive documentation standards and conducted code reviews for all production deployments, ensuring adherence to platform security and performance benchmarks."
       ],
     },
     {
@@ -30,8 +31,9 @@ export default function Experience() {
       location: "Bengaluru, India",
       duration: "Mar 2023 - Aug 2023",
       achievements: [
-        "Supported deployment validations, design reviews, and incident response, contributing to quality standards and gaining hands-on experience with enterprise-scale system architecture.",
-        "Created automation scripts in Bash that reduced manual configuration time by 30%, improving efficiency for network function setup and validation tasks."
+        "Contributed to design reviews and deployment planning sessions, quickly mastering complex system architecture to inform and execute validation tasks.",
+        "Created Bash automation scripts that reduced manual configuration time by 30% for network function setup and validation.",
+        "Supported internal QA by executing feature test plans and diagnosing environment-specific bugs across deployment stages, stabilizing the release pipeline."
       ],
     },
     {
