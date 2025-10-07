@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from '../contexts/theme-context'
+import { Toaster } from '../components/ui/sonner'
 
 export const metadata: Metadata = {
   title: 'Dheeraaj Pinjala - Portfolio',
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           {children}
+          <Toaster richColors position="top-right" />
         </ThemeProvider>
       </body>
     </html>
