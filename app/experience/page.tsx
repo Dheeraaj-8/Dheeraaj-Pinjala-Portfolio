@@ -18,11 +18,12 @@ export default function Experience() {
       location: "Bengaluru, India",
       duration: "Sep 2023 - Aug 2025",
       achievements: [
-        "Directed the design and development of a centralized network dashboard (React/FastAPI), collaborating with Product and NOC teams to translate operational requirements into features, cutting average incident resolution time by 20 minutes",
-        "Deployed 10+ microservices using Docker and Kubernetes on OpenStack VMs, leveraging CI/CD pipelines to automate deployments, reducing deployment time by 60%",
-        "Eliminated $300K in annual resource waste by optimizing resource allocation in production using Python and time-series forecasting",
-        "Developed scalable APIs and React Components to integrate AI/ML models as microservices onto network data infrastructure, generating alerts and recommendations for network health, device performance, and user experience",
-        "Established comprehensive documentation standards and conducted code reviews for all production deployments, ensuring adherence to platform security and performance benchmarks"
+        "Developed a network monitoring dashboard using React and FastAPI that displays real-time device health metrics, collaborating with Product and NOC teams to identify critical alerts for 50+ network operators",
+        "Designed REST API endpoints using FastAPI to expose device health, performance metrics, and alert data to the monitoring dashboard",
+        "Containerized backend monitoring services using Docker and Kubernetes and deployed across multiple OpenStack VMs, creating Helm charts for consistent deployments and reducing manual configuration steps",
+        "Wrote Python analytics scripts to track network resource utilization across production environments, helping the infrastructure team identify optimization opportunities for capacity planning",
+        "Built an LLM-based tool using RAG to search network logs and troubleshooting documentation, helping engineers quickly locate relevant information during incidents",
+        "Facilitated technical workshops as part of HPE's ACE program, teaching React and Kubernetes fundamentals to 20+ new engineers and interns, improving team knowledge sharing"
       ],
     },
     {
@@ -31,9 +32,9 @@ export default function Experience() {
       location: "Bengaluru, India",
       duration: "Mar 2023 - Aug 2023",
       achievements: [
-        "Collaborated on design reviews and deployment planning sessions, quickly mastering complex system architecture to inform and execute validation tasks",
-        "Created Bash automation scripts that reduced manual configuration time by 30% for network function setup and validation",
-        "Strengthened internal QA by executing feature test plans and diagnosing environment-specific bugs across deployment stages, stabilizing the release pipeline"
+        "Supported senior engineers in NF deployment design reviews and later executed validation testing workflows independently",
+        "Wrote Bash scripts to automate repetitive network configuration tasks, reducing manual setup steps for validation environments",
+        "Developed unit and integration tests for backend APIs using pytest, improving test coverage and identifying bugs before deployment"
       ],
     },
     {
@@ -42,8 +43,8 @@ export default function Experience() {
       location: "Chennai, India",
       duration: "Jun 2022 - Feb 2023",
       achievements: [
-        "Mentored 50+ students on machine learning and data science techniques using relevant frameworks and libraries",
-        "Organized 10+ AI/ML workshops and hackathons, increasing student participation by 150%, resulting in 5+ coding competition wins"
+        "Taught machine learning fundamentals to 50+ students through weekly workshops, covering supervised learning, neural networks, and practical applications using Python, scikit-learn, and TensorFlow",
+        "Organized coding competitions and hackathons focused on AI/ML challenges, guiding students through problem-solving approaches"
       ],
     },
   ]

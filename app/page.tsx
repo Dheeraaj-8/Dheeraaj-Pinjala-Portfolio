@@ -49,7 +49,7 @@ export default function Portfolio() {
               
               {/* Tagline - Responsive text */}
               <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2 tracking-wide px-4 lg:px-0">
-                AI Enthusiast • Cloud & DevOps Practitioner • Ex-Software Engineer
+                Full-Stack Engineer • AI Enthusiast • MSCS @ Northeastern
               </p>
               
               {/* Location & Experience - Responsive layout */}
@@ -136,14 +136,10 @@ export default function Portfolio() {
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">About Me</h2>
           <div className="max-w-3xl mx-auto">
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-justify">
-              Hello! I'm Dheeraaj, currently pursuing my Master of Science in Computer Science at Northeastern University in Boston, Massachusetts. 
-              My journey in tech began with a Bachelor's in Information Technology from SSN College of Engineering, where I discovered my passion for 
-              solving real-world problems and creating meaningful impact through technology.
+            Hello! I'm Dheeraaj, and I believe the best technology is the kind that quietly makes people's lives easier.
             </p>
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-justify">
-              As a former Software Engineer at Hewlett Packard Enterprise, I spent 2 years building enterprise-scale solutions and honing my skills in 
-              cloud infrastructure, DevOps practices, and collaborative leadership. This experience taught me the importance of building systems that 
-              not only work well but also serve real human needs.
+            I'm currently pursuing my Master's in Computer Science at Northeastern University in Boston. Before this, I spent 2.5 years at Hewlett Packard Enterprise in Bengaluru, building monitoring tools and AI-powered systems that helped engineers do their jobs better. My background spans full-stack development, cloud infrastructure, and increasingly, exploring how AI can solve real problems without adding unnecessary complexity.
             </p>
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-justify">
               What truly drives me is the ethical application of AI to solve complex problems. I believe technology should enhance human capabilities 
