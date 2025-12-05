@@ -12,24 +12,7 @@ export default function Projects() {
   const { theme } = useTheme()
 
   const projects = [
-    {
-      title: "Google Calendar",
-      duration: "Academic Project",
-      techStack: ["Java", "Java Swing", "JUnit", "MVC"],
-      description: "Developed a calendar application in Java using MVC architecture with three interfaces (headless, interactive, Swing GUI), implementing Singleton and Command design patterns to support multiple calendars, timezone-aware scheduling, event copying, and Google Calendar-compatible exports.",
-      impact: "MVC architecture with 3 interfaces, multiple design patterns",
-      github: "#",
-      tags: ["#Java", "#DesignPatterns", "#MVC"],
-    },
-    {
-      title: "KAMBAZ Application",
-      duration: "Academic Project",
-      techStack: ["MongoDB", "Express.js", "React", "Node.js", "Redux"],
-      description: "Built a NU Canvas-inspired learning management system using MERN stack with Redux state management, RESTful APIs, JWT authentication, and MongoDB database design, supporting course creation, assignment workflows, and multi-role user management.",
-      impact: "Full-stack LMS with multi-role user management",
-      github: "https://github.com/Dheeraaj-8/kambaz-next-js",
-      tags: ["#MERN", "#FullStack", "#LMS"],
-    },
+   
     {
       title: "Multi-Agent AI Researcher System",
       duration: "Personal Project",
@@ -47,6 +30,24 @@ export default function Projects() {
       impact: "Bilingual legal support with RAG implementation",
       github: "https://github.com/Dheeraaj-8/Indian-LegalGPT",
       tags: ["#RAG", "#VectorDB", "#AIchatbot"],
+    },
+    {
+      title: "KAMBAZ Application",
+      duration: "Academic Project",
+      techStack: ["MongoDB", "Express.js", "React", "Node.js", "Redux"],
+      description: "Built a NU Canvas-inspired learning management system using MERN stack with Redux state management, RESTful APIs, JWT authentication, and MongoDB database design, supporting course creation, assignment workflows, and multi-role user management.",
+      impact: "Full-stack LMS with multi-role user management",
+      github: "https://github.com/Dheeraaj-8/kambaz-next-js",
+      tags: ["#MERN", "#FullStack", "#LMS"],
+    },
+    {
+      title: "Google Calendar",
+      duration: "Academic Project",
+      techStack: ["Java", "Java Swing", "JUnit", "MVC"],
+      description: "Developed a calendar application in Java using MVC architecture with three interfaces (headless, interactive, Swing GUI), implementing Singleton and Command design patterns to support multiple calendars, timezone-aware scheduling, event copying, and Google Calendar-compatible exports.",
+      impact: "MVC architecture with 3 interfaces, multiple design patterns",
+      github: "#",
+      tags: ["#Java", "#DesignPatterns", "#MVC"],
     },
     {
       title: "Credit Score Analysis using Machine Learning",

@@ -21,9 +21,9 @@ export default function Experience() {
         "Developed a network monitoring dashboard using React and FastAPI that displays real-time device health metrics, collaborating with Product and NOC teams to identify critical alerts for 50+ network operators",
         "Designed REST API endpoints using FastAPI to expose device health, performance metrics, and alert data to the monitoring dashboard",
         "Containerized backend monitoring services using Docker and Kubernetes and deployed across multiple OpenStack VMs, creating Helm charts for consistent deployments and reducing manual configuration steps",
-        "Wrote Python analytics scripts to track network resource utilization across production environments, helping the infrastructure team identify optimization opportunities for capacity planning",
+        "Improved real-time visibility by automating network monitoring with Python pipelines to collect logs, parse metrics, detect anomalies, trigger alerts, and update dashboards",
         "Built an LLM-based tool using RAG to search network logs and troubleshooting documentation, helping engineers quickly locate relevant information during incidents",
-        "Facilitated technical workshops as part of HPE's ACE program, teaching React and Kubernetes fundamentals to 20+ new engineers and interns, improving team knowledge sharing"
+        "Led React and Python ramp-up sessions for interns, aligning training with business use cases and production practices"
       ],
     },
     {
