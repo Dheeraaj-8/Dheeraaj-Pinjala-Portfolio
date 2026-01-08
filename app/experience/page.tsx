@@ -23,7 +23,7 @@ export default function Experience() {
         "Engineered a hybrid retrieval layer using FAISS and Pinecone architecture, increasing search accuracy by 35% across a 50K+ document corpus by optimizing vector embeddings",
         "Streamlined financial audits by 60% via LangGraph multi-agent orchestration, utilizing query decomposition to automate iterative data retrieval and cross-referencing",
         "Integrated Power BI with Prometheus & Grafana using MS Fabric to visualize LLM usage and performance metrics for stakeholders",
-        "Accelerated production deployment by collaborating with cross-functional teams to establish evaluation benchmarks, utilizing model quantization to meet strict enterprise latency and accuracy standards"
+        "Collaborated with DevOps and Product teams to deploy MLOps pipelines, using model quantization to reduce inference latency and meet enterprise production requirements"
       ],
     },
     {
