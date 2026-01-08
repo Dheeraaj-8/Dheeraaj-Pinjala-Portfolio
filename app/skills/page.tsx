@@ -10,18 +10,33 @@ export default function Skills() {
   const { theme } = useTheme()
 
   const technicalSkills = {
-    "Languages": ["TypeScript", "Python", "Bash", "JavaScript", "C", "C++", "SQL"],
-    "Frameworks & Libraries": ["React", "Next.js", "FastAPI", "TensorFlow", "Scikit-learn", "Langchain"],
-    "Cloud & DevOps": ["Azure DevOps", "Kubernetes", "Docker", "OpenStack", "Linux (RHEL)"],
-    "AI & Other Technologies": ["Prompt Engineering", "Retrieval-Augmented Generation (RAG)", "Agentic AI", "ChromaDB", "MySQL"]
+    "Programming Languages": ["Python", "JavaScript", "SQL", "TypeScript", "Java", "C", "C++"],
+    "AI/ML Expertise": ["Large Language Models (LLMs)", "Retrieval-Augmented Generation (RAG)", " Natural Language Processing (NLP)", "Prompt Engineering", "Fine-tuning", "Deep Learning", "Agentic Workflows"],
+    "Frameworks & Libraries": ["TensorFlow", "PyTorch", "Scikit-Learn", "React", "FastAPI", "LangChain", "LangGraph", "Hugging Face Transformers", "Groq"],
+    "Data Analysis & Visualization": ["Pandas", "Numpy", "Seaborn", "Big Data Engineering", "Data Analytics with Python", "DBMS", "Prometheus", "Grafana"],
+    "Cloud Platforms": ["Microsoft Azure", "AKS", "DataBricks", "Azure ML", "MS Fabric"],
+    "Databases": ["FAISS", "Pinecone", "VectorDB", "MongoDB", "ChromaDB"]
   }
 
   const professionalSkills = [
+    // Soft Skills
     "Leadership & Mentorship",
-    "Problem Solving", 
-    "Innovation & Research",
+    "Communication",
+    "Teamwork & Collaboration",
+    "Problem Solving",
+    "Analytical Thinking",
+    "Critical Thinking",
+    "Adaptability",
+    "Time Management",
+    "Continuous Learning",
+    
+    // Professional Skills
+    "Technical Documentation",
+    "Code Review",
+    "System Architecture",
     "Cross-functional Collaboration",
-    "Project Management",
+    "Performance Optimization",
+    "Quality Assurance",
     "Data-Driven Decision Making"
   ]
 
@@ -59,14 +74,12 @@ export default function Skills() {
           {/* Professional Skills */}
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Professional Skills</h2>
-            <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 justify-items-center">
-                {professionalSkills.map((skill) => (
-                  <Badge key={skill} variant="secondary" className="text-xs sm:text-sm px-3 sm:px-4 py-2">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+              {professionalSkills.map((skill) => (
+                <Badge key={skill} variant="secondary" className="text-xs sm:text-sm w-full flex items-center justify-center text-center px-3 sm:px-4 py-2">
+                  {skill}
+                </Badge>
+              ))}
             </div>
           </div>
         </div>

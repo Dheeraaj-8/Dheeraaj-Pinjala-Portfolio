@@ -20,7 +20,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
     <nav className={`${theme === "dark" ? "bg-card border-purple-800/30" : "bg-white"} border-b flex-shrink-0`}>
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <Link href="/about" className="text-xl font-bold text-blue-600 dark:text-purple-400">
+          <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-purple-400">
             Dheeraaj Pinjala
           </Link>
           
@@ -30,7 +30,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
               <Link
                 key={item}
                 href={item.toLowerCase()}
-                className={`hover:text-blue-600 dark:hover:text-purple-400 transition-colors ${
+                className={`text-lg hover:text-blue-600 dark:hover:text-purple-400 transition-colors ${
                   item === currentPage ? "text-blue-600 dark:text-purple-400" : ""
                 }`}
               >
@@ -69,7 +69,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
                 <Link
                   key={item}
                   href={item.toLowerCase()}
-                  className={`py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-purple-900/30 transition-colors ${
+                  className={`text-lg py-2 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-purple-900/30 transition-colors ${
                     item === currentPage ? "text-blue-600 dark:text-purple-400 bg-blue-50 dark:bg-purple-900/20" : ""
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}

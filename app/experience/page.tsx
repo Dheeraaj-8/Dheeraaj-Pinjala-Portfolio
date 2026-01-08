@@ -13,28 +13,27 @@ export default function Experience() {
 
   const experience = [
     {
-      title: "Software Engineer",
-      company: "Hewlett Packard Enterprise (HPE) - Aruba Networking",
+      title: "Software Engineer (AI/ML Engineer)",
+      company: "Hewlett Packard Enterprise (HPE)",
       location: "Bengaluru, India",
       duration: "Sep 2023 - Aug 2025",
       achievements: [
-        "Developed a network monitoring dashboard using React and FastAPI that displays real-time device health metrics, collaborating with Product and NOC teams to identify critical alerts for 50+ network operators",
-        "Designed REST API endpoints using FastAPI to expose device health, performance metrics, and alert data to the monitoring dashboard",
-        "Containerized backend monitoring services using Docker and Kubernetes and deployed across multiple OpenStack VMs, creating Helm charts for consistent deployments and reducing manual configuration steps",
-        "Improved real-time visibility by automating network monitoring with Python pipelines to collect logs, parse metrics, detect anomalies, trigger alerts, and update dashboards",
-        "Built an LLM-based tool using RAG to search network logs and troubleshooting documentation, helping engineers quickly locate relevant information during incidents",
-        "Led React and Python ramp-up sessions for interns, aligning training with business use cases and production practices"
-      ],
+        "Built an enterprise RAG system on HPE GreenLake infrastructure, utilizing GPT-4 and LangChain to enable semantic search and automated insight synthesis across unstructured financial repositories for 200+ users",
+        "Reduced model hallucinations by 38% through systematic prompt engineering and fine-tuning of GPT-3.5 Turbo on domain-specific datasets and hyperparameter optimization",
+        "Engineered a high-performance retrieval layer using a hybrid FAISS and Pinecone architecture, increasing search accuracy by 35% across a 50K+ document corpus",
+        "Streamlined financial audits by implementing multi-agent orchestration via LangGraph, utilizing query decomposition to reduce manual research time by 60%",
+        "Integrated Power BI with Prometheus & Grafana using MS Fabric to visualize LLM usage and performance metrics for stakeholders",
+        "Collaborated with cross-functional teams to set evaluation benchmarks, using quantization and inference-parameter tuning to meet production accuracy and latency standards"],
     },
     {
       title: "Software Engineer Intern",
-      company: "Hewlett Packard Enterprise (HPE) - Global Technology Center",
+      company: "Hewlett Packard Enterprise (HPE)",
       location: "Bengaluru, India",
       duration: "Mar 2023 - Aug 2023",
       achievements: [
-        "Supported senior engineers in NF deployment design reviews and later executed validation testing workflows independently",
-        "Wrote Bash scripts to automate repetitive network configuration tasks, reducing manual setup steps for validation environments",
-        "Developed unit and integration tests for backend APIs using pytest, improving test coverage and identifying bugs before deployment"
+        "Developed a financial dashboard using React and FastAPI to visualize transaction health, implementing REST APIs to integrate automated fraud-risk alerts directly into the analyst workflow",
+        "Constructed Python-based pipelines to automate log parsing and anomaly detection, containerizing services via Docker and Kubernetes to streamline deployments across Azure AKS",
+        "Maintained detailed technical documentation of experimental results, methodologies, and codebases, presenting findings to senior engineers to guide project roadmaps",
       ],
     },
     {
